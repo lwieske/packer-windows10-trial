@@ -1,8 +1,8 @@
 {
     "variables": {
         "name":     "windows10-trial",
-        "iso_path": "iso/10586.0.151029-1700.TH2_RELEASE_CLIENTENTERPRISEEVAL_OEMRET_X64FRE_DE-DE.ISO",
-        "iso_md5":  "a7bcf12c1103785a68ed5808548c164f"
+        "iso_path": "iso/14393.0.160715-1616.RS1_RELEASE_CLIENTENTERPRISEEVAL_OEMRET_X64FRE_DE-DE.ISO",
+        "iso_sha256":  "7ce679f3eae40ade5fbb69c629f6872e24d8b0a5aa21a005c7386e693614b913"
     },
     "builders": [
         {
@@ -17,8 +17,8 @@
             "guest_os_type":        "Windows10_64",
             "headless":             false,
             "iso_url":              "{{user `iso_path`}}",
-            "iso_checksum_type":    "md5",
-            "iso_checksum":         "{{user `iso_md5`}}",
+            "iso_checksum_type":    "sha256",
+            "iso_checksum":         "{{user `iso_sha256`}}",
             "winrm_username":       "vagrant",
             "winrm_password":       "vagrant",
             "winrm_timeout":        "6h",
