@@ -1,14 +1,21 @@
-# Packer-Windows10-Trial (Redstone 1 / RS1 / August 2016)
+# Packer-Windows10-Trial (Redstone 4 / April 2018)
 
 Makes a Windows 10 x64 box for use with Virtualbox.
 
 Inspired by so many other repositories on GitHub.
 
-| Build	| Version | Codename | Date |
-|---:|---:|---|---|
-| 10240	| 1507 | Threshold1 | July 2015 |
-| 10586	| 1511 | Threshold2 | November 2015 |
-| **14393**	| **1607** | **Redstone1** | **August 2016** |
+| Build	| Version | Codename | Date | Marketing Name |
+|---:|---:|---|---|---|
+|       |      | 19H2        |                 |                      |
+|       |      | 19H1        |                 |                      |
+|       | 1809 | Redstone 5  |                 | October 2018 Update  |
+| **17134** | **1803** | **Redstone 4**  | **March 2018**      | **April 2018 Update**    |
+| 16299 | 1709 | Redstone 3  | September 2017  | Fall Creators Update |
+| 15063 | 1703 | Redstone 2  | March 2017      | Creators Update      |
+| 14393	| 1607 | Redstone 1  | August 2016     |                      |
+| 10586	| 1511 | Threshold 2 | November 2015   |                      |
+| 10240	| 1507 | Threshold 1 | July 2015       |                      |
+
 
 ```
 $ packer build -force -only=virtualbox-iso windows10-trial.json

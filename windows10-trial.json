@@ -1,8 +1,8 @@
 {
     "variables": {
         "name":     "windows10-trial",
-        "iso_path": "iso/14393.0.160715-1616.RS1_RELEASE_CLIENTENTERPRISEEVAL_OEMRET_X64FRE_DE-DE.ISO",
-        "iso_sha256":  "7ce679f3eae40ade5fbb69c629f6872e24d8b0a5aa21a005c7386e693614b913"
+        "iso_path": "iso/17134.1.180410-1804.rs4_release_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_de-de.iso",
+        "iso_sha256":  "d28bf13fdc131cc2bc8f78f9a508ab280258eb9d76653e18cf8f0a890a41f588"
     },
     "builders": [
         {
@@ -37,21 +37,27 @@
             "restart_timeout": "30m"
         },
         {
-            "type": "powershell",
-            "execute_command": "powershell -ExecutionPolicy Bypass \"& { {{.Vars}}{{.Path}}; exit $LastExitCode}\"",
-            "scripts": [
-                "enable-rdp.ps1",
-                "guest-tools.ps1"
-            ]
+            "type":   "powershell",
+            "script": "enable-rdp.ps1"
+        },
+        {
+          "type":   "powershell",
+          "script": "guest-tools.ps1"
+        },
+        {
+          "type":   "powershell",
+          "script": "chocolatey.ps1"
+        },
+        {
+          "type":   "powershell",
+          "script": "choco-packs.ps1"
         },
         {
             "type": "windows-restart"
         },
         {
-            "type": "powershell",
-            "execute_command": "powershell -ExecutionPolicy Bypass \"& { {{.Vars}}{{.Path}}; exit $LastExitCode}\"",
+            "type":   "powershell",
             "scripts": [
-                "install-pkgs.ps1",
                 "final-tweaks.ps1",
                 "compact.ps1"
             ]
